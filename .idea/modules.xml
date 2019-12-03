@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/WebWorldWind.iml" filepath="$PROJECT_DIR$/.idea/WebWorldWind.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../WebWorldWind/WebWorldWind-X/WebWorldWind-X.iml" filepath="$PROJECT_DIR$/../../WebWorldWind/WebWorldWind-X/WebWorldWind-X.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../WebWorldWind/www-gisat/www-gisat.iml" filepath="$PROJECT_DIR$/../../WebWorldWind/www-gisat/www-gisat.iml" />
+    </modules>
+  </component>
+</project>

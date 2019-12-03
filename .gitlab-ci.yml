@@ -1,0 +1,34 @@
+image: node:10
+
+stages:
+  - build
+  - deploy
+
+before_script:
+  - npm ci
+
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - build
+  except:
+    - tags
+
+npm:
+  stage: deploy
+  script:
+    - git config --global user.email "yann.voumard@solenix.ch"
+    - git config --global user.name "Yann Voumard"
+    - npm version prerelease
+    - npm run build
+    - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+    - npm publish
+    - git push https://yvoumard:${GIT_TOKEN}@gitlab.solenix.ch/eo-downstream/slxde-eoapps/webworldwind.git --follow-tags HEAD:esa
+  only:
+    - esa
+  except:
+    - tags
+  when: manual
